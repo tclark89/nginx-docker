@@ -1,0 +1,37 @@
+services:
+  nginx:
+    image: nginx:stable
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - calibre
+      - homepage
+      - sonarr
+      - radarr
+      - nextcloud
+      - tdarr
+
+networks:
+  calibre:
+    external: true
+    name: calibre
+  homepage:
+    external: true
+    name: homepage
+  sonarr:
+    external: true
+    name: sonarr
+  radarr:
+    external: true
+    name: radarr
+  nextcloud:
+    external: true
+    name: nextcloud
+  tdarr:
+    external: true
+    name: tdarr
