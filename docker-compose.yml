@@ -13,6 +13,7 @@ services:
       - homepage
       - sonarr
       - radarr
+      - mealie
       - nextcloud
       - tdarr
 
@@ -29,6 +30,9 @@ networks:
   radarr:
     external: true
     name: radarr
+  mealie:
+    external: true
+    name: mealie
   nextcloud:
     external: true
     name: nextcloud
