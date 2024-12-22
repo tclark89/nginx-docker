@@ -16,6 +16,7 @@ services:
       - mealie
       - nextcloud
       - tdarr
+      - tautulli
 
 networks:
   calibre:
@@ -39,3 +40,6 @@ networks:
   tdarr:
     external: true
     name: tdarr
+  tautulli:
+    external: true
+    name: tautulli
