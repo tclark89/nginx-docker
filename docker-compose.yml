@@ -13,7 +13,7 @@ services:
       - homepage
       - sonarr
       - radarr
-        #- radarr_swarm
+      - radarr_swarm
       - mealie
       - nextcloud
       - tdarr
@@ -32,9 +32,9 @@ networks:
   radarr:
     external: true
     name: radarr
-      #radarr_swarm:
-      #external: true
-      #name: radarr_swarm
+  radarr_swarm:
+    name: radarr_swarm
+    external: true
   mealie:
     external: true
     name: mealie
