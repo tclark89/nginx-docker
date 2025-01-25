@@ -36,6 +36,7 @@ networks:
     name: radarr_swarm
     external: true
   mealie:
+    driver: overlay
     external: true
     name: mealie
   nextcloud:
