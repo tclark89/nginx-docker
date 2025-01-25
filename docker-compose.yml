@@ -11,9 +11,10 @@ services:
     networks:
       - calibre
       - homepage
-      - sonarr
+      - portainer
       - radarr
       - radarr_swarm
+      - sonarr
       - mealie
       - nextcloud
       - tdarr
@@ -26,6 +27,9 @@ networks:
   homepage:
     external: true
     name: homepage
+  portainer:
+    external: true
+    name: portainer
   sonarr:
     external: true
     name: sonarr
