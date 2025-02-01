@@ -7,7 +7,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./conf:/etc/nginx/conf.d/
       - ./certbot/www/:/var/www/certbot/:ro
     networks:
       - calibre
@@ -15,7 +15,6 @@ services:
       - portainer
       - mealie
       - pasta
-      - tdarr
       - tautulli
   certbot:
     image: certbot/certbot:latest
@@ -44,9 +43,6 @@ networks:
     driver: overlay
     external: true
     name: pasta
-  tdarr:
-    external: true
-    name: tdarr
   tautulli:
     driver: overlay
     external: true
