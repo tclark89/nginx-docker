@@ -11,7 +11,6 @@ services:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
     networks:
-      - calibre
       - homepage
       - portainer
       - mealie
@@ -27,9 +26,6 @@ services:
       - ./cloudflare.ini:/etc/letsencrypt/cloudflare.ini:ro
 
 networks:
-  calibre:
-    external: true
-    name: calibre
   homepage:
     driver: overlay
     external: true
