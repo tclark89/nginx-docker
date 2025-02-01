@@ -13,11 +13,7 @@ services:
       - calibre
       - homepage
       - portainer
-      - radarr
-      - radarr_swarm
-      - sonarr
       - mealie
-      - nextcloud
       - pasta
       - tdarr
       - tautulli
@@ -40,22 +36,10 @@ networks:
   portainer:
     external: true
     name: portainer
-  sonarr:
-    external: true
-    name: sonarr
-  radarr:
-    external: true
-    name: radarr
-  radarr_swarm:
-    name: radarr_swarm
-    external: true
   mealie:
     driver: overlay
     external: true
     name: mealie
-  nextcloud:
-    external: true
-    name: nextcloud
   pasta:
     driver: overlay
     external: true
