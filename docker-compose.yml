@@ -14,6 +14,7 @@ services:
       - homepage
       - portainer
       - mealie
+      - nextcloud
       - pasta
       - tautulli
   certbot:
@@ -33,6 +34,10 @@ networks:
   portainer:
     external: true
     name: portainer
+  nextcloud:
+    driver: overlay
+    external: true
+    name: nextcloud
   mealie:
     driver: overlay
     external: true
