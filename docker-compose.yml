@@ -16,6 +16,7 @@ services:
       - portainer
       - mealie
       - nextcloud
+      - nextcloud-aio
       - pasta
       - tautulli
   certbot:
@@ -39,6 +40,9 @@ networks:
     driver: overlay
     external: true
     name: nextcloud
+  nextcloud-aio:
+    external: true
+    name: nextcloud-aio
   mealie:
     driver: overlay
     external: true
