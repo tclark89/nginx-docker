@@ -14,11 +14,13 @@ services:
     networks:
       - homepage
       - portainer
+      - calibre
+      - calibre-web
       - mealie
-      - nextcloud
       - nextcloud-aio
-      - pasta
-      - tautulli
+      - radarr
+      - sonarr
+      - watchtower
   certbot:
     image: certbot/dns-cloudflare:latest
     container_name: certbot
@@ -39,28 +41,29 @@ services:
 
 networks:
   homepage:
-    driver: overlay
     external: true
     name: homepage
   portainer:
     external: true
     name: portainer
-  nextcloud:
-    driver: overlay
+  calibre-web:
     external: true
-    name: nextcloud
+    name: calibre-web
+  calibre:
+    external: true
+    name: calibre
   nextcloud-aio:
     external: true
     name: nextcloud-aio
   mealie:
-    driver: overlay
     external: true
     name: mealie
-  pasta:
-    driver: overlay
+  radarr:
     external: true
-    name: pasta
-  tautulli:
-    driver: overlay
+    name: radarr
+  sonarr:
     external: true
-    name: tautulli
+    name: sonarr
+  watchtower:
+    external: true
+    name: watchtower
