@@ -12,7 +12,8 @@ services:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
     networks:
-      - homepage
+      - frontend
+      #- homepage
       - portainer
       - calibre
       - calibre-web
@@ -40,6 +41,9 @@ services:
       -d *.tyler-clark.com
 
 networks:
+  frontend:
+    external: true
+    #name: frontend
   homepage:
     external: true
     name: homepage
