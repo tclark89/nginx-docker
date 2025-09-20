@@ -12,16 +12,8 @@ services:
       - ./certbot/www/:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
     networks:
-      - frontend
-      #- homepage
-      - portainer
-      - calibre
-      - calibre-web
-      - mealie
+      - default
       - nextcloud-aio
-      - radarr
-      - sonarr
-      - watchtower
   certbot:
     image: certbot/dns-cloudflare:latest
     container_name: certbot
@@ -41,33 +33,9 @@ services:
       -d *.tyler-clark.com
 
 networks:
-  frontend:
+  default:
     external: true
-    #name: frontend
-  homepage:
-    external: true
-    name: homepage
-  portainer:
-    external: true
-    name: portainer
-  calibre-web:
-    external: true
-    name: calibre-web
-  calibre:
-    external: true
-    name: calibre
+    name: frontend
   nextcloud-aio:
     external: true
     name: nextcloud-aio
-  mealie:
-    external: true
-    name: mealie
-  radarr:
-    external: true
-    name: radarr
-  sonarr:
-    external: true
-    name: sonarr
-  watchtower:
-    external: true
-    name: watchtower
